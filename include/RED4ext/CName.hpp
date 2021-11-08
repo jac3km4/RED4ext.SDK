@@ -88,7 +88,7 @@ struct CName
         return hash == 0;
     }
 
-    [[deprecated("Use 'IsNone()' instead.")]] constexpr bool IsEmpty() const noexcept
+    constexpr bool IsEmpty() const noexcept
     {
         return IsNone();
     }

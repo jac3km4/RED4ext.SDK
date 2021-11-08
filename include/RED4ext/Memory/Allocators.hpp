@@ -29,7 +29,7 @@ struct IAllocator
     virtual void sub_28(void* a1) = 0;
     virtual const uint32_t GetHandle() const = 0;
 
-    [[deprecated("Use 'GetHandle()' instead.")]] const uint32_t GetId() const
+    uint32_t GetId() const
     {
         return GetHandle();
     }
@@ -2711,13 +2711,13 @@ struct GPUM_Buffer_MorphTargetsAllocator : Allocator<GPUM_Buffer_MorphTargets>
 };
 } // namespace Memory
 
-struct [[deprecated("Use 'Memory::IAllocator' instead.")]] IMemoryAllocator : Memory::IAllocator
+struct IMemoryAllocator : Memory::IAllocator
 {
-    struct [[deprecated("Use 'Memory::AllocationResult' instead.")]] Result : Memory::AllocationResult{};
+    struct Result : Memory::AllocationResult{};
 };
 
-struct [[deprecated("Use 'Memory::EngineAllocator' instead.")]] EngineAllocator : Memory::EngineAllocator{};
-struct [[deprecated("Use 'Memory::RTTIAllocator' instead.")]] RTTIAllocator : Memory::RTTIAllocator{};
-struct [[deprecated("Use 'Memory::RTTIFunctionAllocator' instead.")]] RTTIFunctionAllocator
+struct EngineAllocator : Memory::EngineAllocator{};
+struct RTTIAllocator : Memory::RTTIAllocator{};
+struct RTTIFunctionAllocator
     : Memory::RTTIFunctionAllocator{};
 } // namespace RED4ext

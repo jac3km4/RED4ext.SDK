@@ -67,33 +67,33 @@ struct CBaseRTTIType
     virtual void sub_B0(int64_t a1, int64_t a2);                                                   // B0
     virtual Memory::IAllocator* GetAllocator() const;                                              // B8
 
-    inline void [[deprecated("Use 'GetName()' instead.")]] GetName(CName& aOut) const
+    inline void GetName(CName& aOut) const
     {
         aOut = GetName();
     }
 
-    inline CName [[deprecated("Use 'GetComputedName()' instead.")]] GetName2() const
+    inline CName GetName2() const
     {
         return GetComputedName();
     }
 
-    inline void [[deprecated("Use 'GetComputedName()' instead.")]] GetName2(CName& aOut) const
+    inline void GetName2(CName& aOut) const
     {
         aOut = GetComputedName();
     }
 
-    inline void [[deprecated("Use 'GetTypeName()' instead.")]] GetTypeName(CString& aOut) const
+    inline void GetTypeName(CString& aOut) const
     {
         auto name = GetTypeName();
         aOut = name;
     }
 
-    inline void [[deprecated("Use 'Construct()' instead.")]] Init(ScriptInstance aMemory) const
+    inline void Init(ScriptInstance aMemory) const
     {
         Construct(aMemory);
     }
 
-    inline void [[deprecated("Use 'Destruct()' instead.")]] Destroy(ScriptInstance aMemory) const
+    inline void Destroy(ScriptInstance aMemory) const
     {
         Destruct(aMemory);
     }
@@ -155,12 +155,12 @@ struct CClass : CBaseRTTIType
 
     void RegisterFunction(CClassFunction* aFunc);
 
-    inline void [[deprecated("Use 'ConstructCls()' instead.")]] InitCls(ScriptInstance aMemory) const
+    inline void InitCls(ScriptInstance aMemory) const
     {
         ConstructCls(aMemory);
     }
 
-    inline void [[deprecated("Use 'DestructCls()' instead.")]] DestroyCls(ScriptInstance aMemory) const
+    inline void DestroyCls(ScriptInstance aMemory) const
     {
         DestructCls(aMemory);
     }
@@ -563,61 +563,61 @@ RED4EXT_ASSERT_SIZE(CRTTIMultiChannelCurveType, 0x48);
 RED4EXT_ASSERT_OFFSET(CRTTIMultiChannelCurveType, name, 0x10);
 RED4EXT_ASSERT_OFFSET(CRTTIMultiChannelCurveType, curveType, 0x18);
 
-struct [[deprecated("Use 'CBaseRTTIType' instead.")]] IRTTIType : CBaseRTTIType{};
-struct [[deprecated("Use 'CBaseRTTIType' instead.")]] CRTTIBaseType : CBaseRTTIType{};
-struct [[deprecated("Use 'CBaseRTTIType' instead.")]] CRTTIType : CBaseRTTIType{};
+struct IRTTIType : CBaseRTTIType{};
+struct CRTTIBaseType : CBaseRTTIType{};
+struct CRTTIType : CBaseRTTIType{};
 
-struct [[deprecated("Use 'CFundamentalRTTITypeBool' instead.")]] BoolType : CFundamentalRTTITypeBool{};
-struct [[deprecated("Use 'CFundamentalRTTITypeInt8' instead.")]] Int8Type : CFundamentalRTTITypeInt8{};
-struct [[deprecated("Use 'CFundamentalRTTITypeUint8' instead.")]] Uint8Type : CFundamentalRTTITypeUint8{};
-struct [[deprecated("Use 'CFundamentalRTTITypeInt16' instead.")]] Int16Type : CFundamentalRTTITypeInt16{};
-struct [[deprecated("Use 'CFundamentalRTTITypeUint16' instead.")]] Uint16Type : CFundamentalRTTITypeUint16{};
-struct [[deprecated("Use 'CFundamentalRTTITypeInt32' instead.")]] Int32Type : CFundamentalRTTITypeInt32{};
-struct [[deprecated("Use 'CFundamentalRTTITypeUint32' instead.")]] Uint32Type : CFundamentalRTTITypeUint32{};
-struct [[deprecated("Use 'CFundamentalRTTITypeInt64' instead.")]] Int64Type : CFundamentalRTTITypeInt64{};
-struct [[deprecated("Use 'CFundamentalRTTITypeUint64' instead.")]] Uint64Type : CFundamentalRTTITypeUint64{};
-struct [[deprecated("Use 'CFundamentalRTTITypeFloat' instead.")]] FloatType : CFundamentalRTTITypeFloat{};
-struct [[deprecated("Use 'CFundamentalRTTITypeDouble' instead.")]] DoubleType : CFundamentalRTTITypeDouble{};
+struct BoolType : CFundamentalRTTITypeBool{};
+struct Int8Type : CFundamentalRTTITypeInt8{};
+struct Uint8Type : CFundamentalRTTITypeUint8{};
+struct Int16Type : CFundamentalRTTITypeInt16{};
+struct Uint16Type : CFundamentalRTTITypeUint16{};
+struct Int32Type : CFundamentalRTTITypeInt32{};
+struct Uint32Type : CFundamentalRTTITypeUint32{};
+struct Int64Type : CFundamentalRTTITypeInt64{};
+struct Uint64Type : CFundamentalRTTITypeUint64{};
+struct FloatType : CFundamentalRTTITypeFloat{};
+struct DoubleType : CFundamentalRTTITypeDouble{};
 
-struct [[deprecated("Use 'CSimpleRTTITypeCName' instead.")]] CNameType : CSimpleRTTITypeCName{};
-struct [[deprecated("Use 'CSimpleRTTITypeString' instead.")]] StringType : CSimpleRTTITypeString{};
-struct [[deprecated("Use 'CSimpleRTTITypeLocalizationString' instead.")]] LocalizationStringType
+struct CNameType : CSimpleRTTITypeCName{};
+struct StringType : CSimpleRTTITypeString{};
+struct LocalizationStringType
     : CSimpleRTTITypeLocalizationString{};
-struct [[deprecated("Use 'CSimpleRTTITypeTweakDBID' instead.")]] TweakDBIDType : CSimpleRTTITypeTweakDBID{};
-struct [[deprecated("Use 'CSimpleRTTITypeDataBuffer' instead.")]] DataBufferType : CSimpleRTTITypeDataBuffer{};
-struct [[deprecated("Use 'CSimpleRTTITypeSharedDataBuffer' instead.")]] SharedDataBufferType
+struct TweakDBIDType : CSimpleRTTITypeTweakDBID{};
+struct DataBufferType : CSimpleRTTITypeDataBuffer{};
+struct SharedDataBufferType
     : CSimpleRTTITypeSharedDataBuffer{};
 struct [[deprecated(
     "Use 'CSimpleRTTITypeSerializationDeferredDataBuffer' instead.")]] serializationDeferredDataBufferType
     : CSimpleRTTITypeSerializationDeferredDataBuffer{};
-struct [[deprecated("Use 'CSimpleRTTITypeVariant' instead.")]] VariantType : CSimpleRTTITypeVariant{};
-struct [[deprecated("Use 'CSimpleRTTITypeCDateTime' instead.")]] CDateTimeType : CSimpleRTTITypeCDateTime{};
-struct [[deprecated("Use 'CSimpleRTTITypeCGUID' instead.")]] CGUIDType : CSimpleRTTITypeCGUID{};
-struct [[deprecated("Use 'CSimpleRTTITypeCRUID' instead.")]] CRUIDType : CSimpleRTTITypeCRUID{};
-struct [[deprecated("Use 'CSimpleRTTITypeCRUIDRef' instead.")]] CRUIDRefType : CSimpleRTTITypeCRUIDRef{};
-struct [[deprecated("Use 'CSimpleRTTITypeEditorObjectID' instead.")]] EditorObjectIDType
+struct VariantType : CSimpleRTTITypeVariant{};
+struct CDateTimeType : CSimpleRTTITypeCDateTime{};
+struct CGUIDType : CSimpleRTTITypeCGUID{};
+struct CRUIDType : CSimpleRTTITypeCRUID{};
+struct CRUIDRefType : CSimpleRTTITypeCRUIDRef{};
+struct EditorObjectIDType
     : CSimpleRTTITypeEditorObjectID{};
-struct [[deprecated("Use 'CSimpleRTTITypeGamedataLocKeyWrapper' instead.")]] gamedataLocKeyWrapperType
+struct gamedataLocKeyWrapperType
     : CSimpleRTTITypeGamedataLocKeyWrapper{};
-struct [[deprecated("Use 'CSimpleRTTITypeMessageResourcePath' instead.")]] MessageResourcePathType
+struct MessageResourcePathType
     : CSimpleRTTITypeMessageResourcePath{};
-struct [[deprecated("Use 'CSimpleRTTITypeNodeRef' instead.")]] NodeRefType : CSimpleRTTITypeNodeRef{};
-struct [[deprecated("Use 'CSimpleRTTITypeRuntimeEntityRef' instead.")]] RuntimeEntityRefType
+struct NodeRefType : CSimpleRTTITypeNodeRef{};
+struct RuntimeEntityRefType
     : CSimpleRTTITypeRuntimeEntityRef{};
 
-struct [[deprecated("Use 'CRTTIBaseArrayType' instead.")]] CArrayBase : CRTTIBaseArrayType{};
-struct [[deprecated("Use 'CRTTIArrayType' instead.")]] CArray : CRTTIArrayType{};
-struct [[deprecated("Use 'CRTTIStaticArrayType' instead.")]] CStaticArray : CRTTIStaticArrayType{};
-struct [[deprecated("Use 'CRTTINativeArrayType' instead.")]] CNativeArray : CRTTINativeArrayType{};
+struct CArrayBase : CRTTIBaseArrayType{};
+struct CArray : CRTTIArrayType{};
+struct CStaticArray : CRTTIStaticArrayType{};
+struct CNativeArray : CRTTINativeArrayType{};
 
-struct [[deprecated("Use 'CRTTIHandleType' instead.")]] CHandle : CRTTIHandleType{};
-struct [[deprecated("Use 'CRTTIWeakHandleType' instead.")]] CWeakHandle : CRTTIWeakHandleType{};
-struct [[deprecated("Use 'CRTTIResourceReferenceType' instead.")]] CResourceReference : CRTTIResourceReferenceType{};
+struct CHandle : CRTTIHandleType{};
+struct CWeakHandle : CRTTIWeakHandleType{};
+struct CResourceReference : CRTTIResourceReferenceType{};
 
-struct [[deprecated("Use 'CRTTIResourceAsyncReferenceType' instead.")]] CResourceAsyncReference
+struct CResourceAsyncReference
     : CRTTIResourceAsyncReferenceType{};
 
-struct [[deprecated("Use 'CRTTILegacySingleChannelCurveType' instead.")]] CLegacySingleChannelCurve
+struct CLegacySingleChannelCurve
     : CRTTILegacySingleChannelCurveType{};
 } // namespace RED4ext
 

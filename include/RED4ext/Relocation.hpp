@@ -65,13 +65,13 @@ private:
 };
 
 template<typename T>
-class [[deprecated("Use 'RelocFunc' instead.")]] REDfunc : public RelocFunc<T>
+class REDfunc : public RelocFunc<T>
 {
     using RelocFunc<T>::RelocFunc;
 };
 
 template<typename T>
-class [[deprecated("Use 'RelocPtr' instead.")]] REDptr : public RelocPtr<T>
+class REDptr : public RelocPtr<T>
 {
     using RelocPtr<T>::RelocPtr;
 };

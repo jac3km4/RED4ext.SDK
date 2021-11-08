@@ -186,8 +186,8 @@ private:
         return std::lower_bound(keys.begin(), keys.end(), aKey, Compare{});
     }
 };
-RED4EXT_ASSERT_SIZE(RED4EXT_ASSERT_ESCAPE(Map<void*, void*>), 0x28);
-RED4EXT_ASSERT_OFFSET(RED4EXT_ASSERT_ESCAPE(Map<void*, void*>), keys, 0);
-RED4EXT_ASSERT_OFFSET(RED4EXT_ASSERT_ESCAPE(Map<void*, void*>), values, 0x10);
-RED4EXT_ASSERT_OFFSET(RED4EXT_ASSERT_ESCAPE(Map<void*, void*>), flags, 0x20);
+// RED4EXT_ASSERT_SIZE(RED4EXT_ASSERT_ESCAPE(Map<void*, void*>), 0x28);
+// RED4EXT_ASSERT_OFFSET(RED4EXT_ASSERT_ESCAPE(Map<void*, void*>), keys, 0);
+// RED4EXT_ASSERT_OFFSET(RED4EXT_ASSERT_ESCAPE(Map<void*, void*>), values, 0x10);
+// RED4EXT_ASSERT_OFFSET(RED4EXT_ASSERT_ESCAPE(Map<void*, void*>), flags, 0x20);
 } // namespace RED4ext
