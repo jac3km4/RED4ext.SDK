@@ -37,6 +37,7 @@ struct CString
     }
 
     bool IsInline() const;
+    static void ConstructAt(CString* addr, const char* aText, Memory::IAllocator* aAllocator);
 
     const char* c_str() const;
     uint32_t Length() const;

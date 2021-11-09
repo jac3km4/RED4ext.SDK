@@ -118,3 +118,8 @@ RED4EXT_INLINE uint32_t RED4ext::CString::Length() const
 {
     return length & 0x3FFFFFFF;
 }
+
+RED4EXT_INLINE void RED4ext::CString::ConstructAt(CString* addr, const char* aText, Memory::IAllocator* aAllocator) {
+    CString cstr(aText, aAllocator);
+    *addr = cstr;
+}

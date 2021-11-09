@@ -101,8 +101,7 @@ RED4EXT_ASSERT_OFFSET(CBaseFunction, flags, 0xA8);
 
 struct CGlobalFunction : CBaseFunction
 {
-    template<typename T>
-    static CGlobalFunction* Create(const char* aFullName, const char* aShortName, ScriptingFunction_t<T> aFunc)
+    static CGlobalFunction* Create(const char* aFullName, const char* aShortName, void* aFunc, bool native)
     {
         Memory::RTTIFunctionAllocator allocator;
         auto memory = allocator.Alloc<CGlobalFunction>();
@@ -111,11 +110,13 @@ struct CGlobalFunction : CBaseFunction
             auto fullName = CNamePool::Add(aFullName);
             auto shortName = CNamePool::Add(aShortName);
 
-            using func_t = CGlobalFunction* (*)(CGlobalFunction*, CName, CName, ScriptingFunction_t<T>);
+            using func_t = CGlobalFunction* (*)(CGlobalFunction*, CName, CName, void*);
             RelocFunc<func_t> func(Addresses::CGlobalFunction_ctor);
             func(memory, fullName, shortName, aFunc);
         }
 
+        RED4ext::CBaseFunction::Flags flags = { .isNative = native, .isStatic = true };
+        memory->flags = flags;
         return memory;
     }
 
