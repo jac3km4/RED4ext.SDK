@@ -100,6 +100,7 @@ struct RTTIRegistrator
     typedef void (*CallbackFunc)(void);
 
     static void Add(CallbackFunc aRegFunc, CallbackFunc aPostRegFunc, bool aUnused = true);
+    static void AddHack(void* aRegFunc, void* aPostRegFunc, bool aUnused = true);
 
     /**
      * @brief Returns the next unique identifier used for RTTI types.

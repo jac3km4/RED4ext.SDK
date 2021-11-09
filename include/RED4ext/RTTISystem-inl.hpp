@@ -28,6 +28,11 @@ RED4EXT_INLINE void RED4ext::RTTIRegistrator::Add(CallbackFunc aRegFunc, Callbac
     func(&instance, aRegFunc, aPostRegFunc, aUnused);
 }
 
+RED4EXT_INLINE void RED4ext::RTTIRegistrator::AddHack(void* aRegFunc, void* aPostRegFunc, bool aUnused)
+{
+    Add((CallbackFunc)aRegFunc, (CallbackFunc)aPostRegFunc, aUnused);
+}
+
 RED4EXT_INLINE const uint32_t RED4ext::RTTIRegistrator::GetNextId()
 {
     RelocPtr<volatile uint32_t> ptr(Addresses::CRTTIRegistrator_RTTIAsyncId);
