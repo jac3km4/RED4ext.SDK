@@ -21,6 +21,7 @@ bool ExecuteGlobalFunction(CClass* aContext, CName aFunc, void* aOut, StackArgs_
 bool ExecuteGlobalFunction(CName aContext, CName aFunc, void* aOut, StackArgs_t aArgs);
 bool ExecuteGlobalFunction(CName aFunc, void* aOut, StackArgs_t aArgs);
 void GetParameter(RED4ext::CStackFrame* aFrame, void* aInstance);
+RED4ext::StackArgs_t ConstructArgs(RED4ext::CStackType* args, uint64_t n);
 
 template<typename... Args>
 bool ExecuteFunction(CClass* aContext, CBaseFunction* aFunc, void* aOut, Args&&... aArgs)

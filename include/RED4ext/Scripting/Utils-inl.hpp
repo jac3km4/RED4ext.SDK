@@ -113,3 +113,9 @@ RED4EXT_INLINE void RED4ext::GetParameter(RED4ext::CStackFrame* aFrame, void* aI
     const auto opcode = *(aFrame->code++);
     RED4ext::OpcodeHandlers::Run(opcode, (IScriptable*)aFrame->context, aFrame, aInstance, nullptr);
 }
+
+RED4EXT_INLINE RED4ext::StackArgs_t RED4ext::ConstructArgs(RED4ext::CStackType* args, uint64_t n)
+{
+    StackArgs_t vec(args, args + n);
+    return vec;
+}
